@@ -48,6 +48,7 @@ Full options
             -- Norminette
             runOnSave = true,
             maxErrorsToShow = 10,
+            norminetteArgs = "",
 
             -- Norminette Formatter
             formatOnSave = true,
