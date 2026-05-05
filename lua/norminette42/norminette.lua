@@ -56,7 +56,7 @@ function M.norminette42(maxErrorsToShow)
     local currentBufferName = vim.api.nvim_buf_get_name(bufferHandle)
     local nameSpaceId = vim.api.nvim_create_namespace("42norme")
     local returnTable = {}
-    local fileHandle = assert(io.popen("norminette " .. config.opts.norminetteArgs .. currentBufferName, "r"))
+    local fileHandle = assert(io.popen("norminette " .. config.opts.norminetteArgs .. " " .. currentBufferName, "r"))
     local index = 1
     repeat
         local line = fileHandle:read("*l")
