@@ -14,9 +14,12 @@ M.format = function()
     local ft = vim.bo.filetype
 
     if opts.filetypes[ft] then
+        local view = vim.fn.winsaveview()
+
         M.set_equalprg(opts.formatter)
-        vim.cmd("normal! gg=G")
-        -- api.nvim_feedkeys("gg=G", "n", true)
+        vim.cmd("keepjumps normal! gg=G")
+
+        vim.fn.winrestview(view)
     else
         vim.notify("Unsopported file type: " .. ft, vim.log.levels.WARN)
     end
